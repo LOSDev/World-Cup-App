@@ -1,5 +1,7 @@
 class Worldcup.Views.Header extends Backbone.View
 
+  template: HandlebarsTemplates['backbone/templates/header']
+
   render: ->
-    @$el.html('<h2>HEADER</h2>')
+    @$el.html(@template())
     @
