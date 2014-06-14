@@ -4,6 +4,6 @@ class Worldcup.Routers.MainRouter extends Backbone.Router
 
   index: ->
 
-    @headerView = new Worldcup.Views.Header()
+    @appNav = new Worldcup.Views.AppNav()
     
-    $('#header').html(@headerView.render().el)
+    $('#header').html(@appNav.render().el)
