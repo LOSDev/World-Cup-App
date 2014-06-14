@@ -5,6 +5,6 @@ class GroupsController < ApplicationController
   def index
     @groups = Group.all
 
-    #respond_with @groups
+    respond_with @groups
   end
 end

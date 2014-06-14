@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
-gem "rails-backbone"
+gem "rails-backbone", git: "https://github.com/codebrew/backbone-rails"
 gem 'handlebars_assets'
 
 gem 'bootstrap-sass', '~> 3.1.1'
