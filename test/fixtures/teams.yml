@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  win: 1
+  draw: 1
+  loss: 1
+  gf: 1
+  ga: 1
+  points: 1
+  group_id: 
+
+two:
+  name: MyString
+  win: 1
+  draw: 1
+  loss: 1
+  gf: 1
+  ga: 1
+  points: 1
+  group_id: 
