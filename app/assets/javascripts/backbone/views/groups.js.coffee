@@ -1,4 +1,6 @@
 class Worldcup.Views.Groups extends Backbone.View
+
+
   template: HandlebarsTemplates['backbone/templates/groups']
 
   initialize: ->
@@ -12,4 +14,4 @@ class Worldcup.Views.Groups extends Backbone.View
 
   renderGroup: (model) ->
     v = new Worldcup.Views.Group({model: model})
-    @$('ul').append(v.render().el)
+    @$('.btn-toolbar').append(v.render().el.childNodes)

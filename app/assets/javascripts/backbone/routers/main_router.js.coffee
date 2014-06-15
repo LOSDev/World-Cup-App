@@ -1,4 +1,6 @@
 class Worldcup.Routers.MainRouter extends Backbone.Router
+
+  
   routes:
     "": "index"
     "groups": "groups"
