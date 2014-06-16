@@ -9,7 +9,6 @@ class GroupsController < ApplicationController
   def show
     
     @group = Group.includes(:teams).find_by_name(params[:id])
-    #@group.teams
-    #respond_with @projects
+    
   end
 end

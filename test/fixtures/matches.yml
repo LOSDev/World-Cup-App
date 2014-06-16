@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  home_team: MyString
+  away_team: MyString
+  home_goals: 1
+  away_goals: 1
+  play_time: 2014-06-16 16:03:32
+  group_id: 
+
+two:
+  home_team: MyString
+  away_team: MyString
+  home_goals: 1
+  away_goals: 1
+  play_time: 2014-06-16 16:03:32
+  group_id: 
