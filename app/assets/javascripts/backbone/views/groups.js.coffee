@@ -9,7 +9,6 @@ class Worldcup.Views.Groups extends Backbone.View
     @collection.fetch({reset: true})
     
     m = new Worldcup.Models.Group({name: @id})
-    
     Worldcup.Vent.trigger "group:show", m
 
   groupShow: (model) ->
@@ -23,8 +22,7 @@ class Worldcup.Views.Groups extends Backbone.View
     @$('#teams').html(@currentGroupDetailsView.render().el) 
     @
 
-  renderGroup: (model) ->
-   
+  renderGroup: (model) ->   
     v = new Worldcup.Views.Group({model: model})
     @$('.btn-toolbar').append(v.render().el)
 
