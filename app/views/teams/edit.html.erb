@@ -1,0 +1,57 @@
+<h1>Teams#edit</h1>
+
+<%= form_for @team, html: {role: "form"} do |f| %>
+   
+  <% if @team.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@team.errors.count, "error") %> prohibited
+        this team from being saved:
+      </h2>
+      <ul>
+        <% @team.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="form-group">
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :win, "Win" %>
+  <%= f.text_field :win, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :draw, "Draw" %>
+  <%= f.text_field :draw, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :loss, "Loss" %>
+  <%= f.text_field :loss, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :gf, "GF" %>
+  <%= f.text_field :gf, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :ga, "GA" %>
+  <%= f.text_field :ga, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :points, "Points" %>
+  <%= f.text_field :points, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Submit", disable_with: 'Submiting...', class: 'btn btn-default' %>
+  
+<% end %>
+  

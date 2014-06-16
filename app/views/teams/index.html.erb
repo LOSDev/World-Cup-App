@@ -1,0 +1,34 @@
+<h1>Listing Teams</h1>
+ 
+<table class="table table-striped">
+  <tr>
+    <th>name</th>
+    <th>W</th>
+    <th>D</th>
+    <th>L</th>
+    <th>GF</th>
+    <th>GA</th>
+    <th>Points</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @teams.each do |team| %>
+  <tr>
+    <td><%= team.name %></td>
+    <td><%= team.win %></td>
+    <td><%= team.draw %></td>
+    <td><%= team.loss %></td>
+    <td><%= team.gf %></td>
+    <td><%= team.ga %></td>
+    <td><%= team.points %></td>
+    
+    
+    <td><%= link_to "Edit", edit_team_path(team.name) %></td>
+   
+  </tr>
+<% end %>
+</table>
+ 
+<br>
