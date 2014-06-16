@@ -7,20 +7,35 @@ class Worldcup.Views.Groups extends Backbone.View
     @listenTo @collection, 'reset', @render
     @listenTo Worldcup.Vent, "group:show", @groupShow
     @collection.fetch({reset: true})
+    
+    m = new Worldcup.Models.Group({name: @id})
+    
+    Worldcup.Vent.trigger "group:show", m
 
   groupShow: (model) ->
     v = new Worldcup.Views.GroupDetails({model: model})
-    @$('#teams').html(v.render().el)
+    @swapGroupDetails(v)
+
 
   render: ->
     @$el.html(@template())
-    @collection.forEach @renderGroup, @
-    
+    @collection.forEach @renderGroup, @ 
+    @$('#teams').html(@currentGroupDetailsView.render().el) 
     @
 
   renderGroup: (model) ->
+   
     v = new Worldcup.Views.Group({model: model})
     @$('.btn-toolbar').append(v.render().el)
+
+  changeGroupView: (v) ->
+    @currentGroupDetailsView = v
+
+  swapGroupDetails: (v) ->
+    @changeGroupView(v)
+    @$('#teams').html(@currentGroupDetailsView.render().el)
+
+
 
 
     

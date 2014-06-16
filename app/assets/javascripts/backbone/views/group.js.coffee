@@ -7,7 +7,9 @@ class Worldcup.Views.Group extends Backbone.View
 
   showDetails: (e) ->
     e.preventDefault()
+    console.log  @model.attributes.name
     Worldcup.Vent.trigger "group:show", @model
+    Backbone.history.navigate "/groups/" + @model.attributes.name
 
 
   render: ->
