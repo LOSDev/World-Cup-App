@@ -1,0 +1,8 @@
+Group.create(name: "A")
+Group.create(name: "B")
+Group.create(name: "C")
+Group.create(name: "D")
+Group.create(name: "E")
+Group.create(name: "F")
+Group.create(name: "G")
+Group.create(name: "H")
