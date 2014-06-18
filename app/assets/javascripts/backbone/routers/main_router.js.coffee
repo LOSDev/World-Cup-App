@@ -1,19 +1,23 @@
 class Worldcup.Routers.MainRouter extends Backbone.Router
+  initialize: ->
+    @listenTo @listenTo Worldcup.Vent, "groups:show", @groups
+    @listenTo @listenTo Worldcup.Vent, "matches:show", @matches
+    @listenTo @listenTo Worldcup.Vent, "scorers:show", @matches
 
-  
   routes:
-    "": "index"
+    "": "groups"
     "groups": "groups"
-    "groups/:id": "showProject"
+    "groups/:id": "showGroup"
     "matches": "matches"
 
-  showProject: (id) ->
+  showGroup: (id) ->
     @layoutViews()
     @renderGroupsView(id)
     
 
 
   groups: ->
+   
     @layoutViews()
     @renderGroupsView()
 

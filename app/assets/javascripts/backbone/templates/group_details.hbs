@@ -23,7 +23,36 @@
         <td>{{points}}</td>
       
       </tr>
-  {{/each}}
+    {{/each}}
   </tbody>
 </table>
 
+<hr>
+<h3>Group {{name}} Matches</h3>
+
+{{#each matches}}
+
+  <div class="well well-sm">
+    
+  
+  <table class="table">
+    
+    <thead>
+      <tr>
+        <th colspan="2"><span class="badge pull-left">{{ play_time }}</span></th>      
+        <th colspan="1" rowspan="" headers="" scope=""></th>      
+        <th colspan="2"><span class="badge pull-right"></span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="30%" align="right"><span>{{ home_team }}</span></td>
+        <td width="10%" align="center"><span>{{ home_goals }}</span></td>
+        <td width="10%" align="center"><span>-</span></td>
+        <td width="10%" align="center"><span>{{ away_goals}}</span></td>
+        <td width="30%" align="left"><span>{{ away_team }}</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+{{/each}}
