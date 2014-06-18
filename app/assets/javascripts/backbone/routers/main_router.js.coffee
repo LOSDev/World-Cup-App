@@ -1,8 +1,12 @@
 class Worldcup.Routers.MainRouter extends Backbone.Router
   initialize: ->
+    @childViews =[]
     @listenTo @listenTo Worldcup.Vent, "groups:show", @groups
     @listenTo @listenTo Worldcup.Vent, "matches:show", @matches
     @listenTo @listenTo Worldcup.Vent, "scorers:show", @matches
+
+    @appNav = new Worldcup.Views.AppNav()
+    $('#header').html(@appNav.render().el)
 
   routes:
     "": "groups"
@@ -11,34 +15,33 @@ class Worldcup.Routers.MainRouter extends Backbone.Router
     "matches": "matches"
 
   showGroup: (id) ->
-    @layoutViews()
     @renderGroupsView(id)
     
 
-
   groups: ->
-   
-    @layoutViews()
     @renderGroupsView()
 
   layoutViews: ->
-    @appNav = new Worldcup.Views.AppNav()
-    $('#header').html(@appNav.render().el)
+    
 
   index: ->
-    @layoutViews()
 
   renderGroupsView: (name="A")->
     v = new Worldcup.Views.Groups({collection: new Worldcup.Collections.Groups(), id: name})
-    $('#content').html(v.render().el)
+    @childViews.push(v)
+    @changeMainView(v)
 
   matches: ->
-    @layoutViews()
     @renderMatchesView()
 
   renderMatchesView: ->
     v = new Worldcup.Views.Matches({collection: new Worldcup.Collections.Matches()})
+    @childViews.push(v)
+    @changeMainView(v)
+    
+  changeMainView: (v) ->
+    @mainView.leave() if @mainView
+    @mainView = v
     $('#content').html(v.render().el)
-    
-    
+
     
