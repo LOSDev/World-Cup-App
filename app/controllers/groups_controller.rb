@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-  
   respond_to :json
 
   def index
@@ -8,7 +7,7 @@ class GroupsController < ApplicationController
 
   def show
     
-    @group = Group.includes(:teams).find_by_name(params[:id])
+    @group = Group.find_by_name(params[:id])
     
   end
 end

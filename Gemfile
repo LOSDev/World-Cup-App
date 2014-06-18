@@ -19,6 +19,8 @@ gem "rails-backbone", git: "https://github.com/codebrew/backbone-rails"
 gem 'handlebars_assets'
 
 gem 'bootstrap-sass', '~> 3.1.1'
+
+gem 'devise'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

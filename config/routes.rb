@@ -1,5 +1,6 @@
 Worldcup::Application.routes.draw do
   
+  devise_for :users
   resources :matches
 
   resources :teams
