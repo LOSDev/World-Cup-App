@@ -4,7 +4,7 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @players = Player.all
+    @players = Player.all.sort_by! { |player| [-player.goals, -player.assists, player.matches] }
   end
 
   # GET /players/1

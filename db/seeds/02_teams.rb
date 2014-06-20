@@ -1,7 +1,7 @@
-Team.create(name: "Brazil", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id: Group.find_by_name("A").id, flag: "Brazil.png")
-Team.create(name: "Mexico", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id:1, flag: "Mexico.png")
-Team.create(name: "Cameroon", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id:1, flag: "Cameroon.png")
-Team.create(name: "Croatia", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id:1, flag: "Croatia.png")
+Team.create(name: "Brazil", win:1, draw: 1, loss:0, gf:3, ga:1, points:4, group_id: Group.find_by_name("A").id, flag: "Brazil.png")
+Team.create(name: "Mexico", win:"0", draw:"0", loss:0, gf:1, ga:0, points:4, group_id:1, flag: "Mexico.png")
+Team.create(name: "Cameroon", win:"0", draw:"0", loss:0, gf:5, ga:3, points:0, group_id:1, flag: "Cameroon.png")
+Team.create(name: "Croatia", win:"0", draw:"0", loss:0, gf:0, ga:5, points:3, group_id:1, flag: "Croatia.png")
 
 Team.create(name: "Netherlands", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id: Group.find_by_name("B").id, flag: "Netherlands.png")
 Team.create(name: "Chile", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id:2, flag: "Chile.png")

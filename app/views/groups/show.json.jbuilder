@@ -1,5 +1,5 @@
 json.name @group.name
-json.teams @group.teams do |team|
+json.teams @group.teams.sort_by! { |team| [-team.points, team.ga-team.gf] } do |team|
   json.extract! team, :id, :name, :points, :win, :loss, :draw, :ga, :gf
   json.flag image_tag(team.flag, width: '40')
 end
