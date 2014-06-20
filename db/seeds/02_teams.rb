@@ -21,7 +21,7 @@ Team.create(name: "Uruguay", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, gr
 Team.create(name: "France", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id: Group.find_by_name("E").id)
 Team.create(name: "Honduras", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id:5)
 Team.create(name: "Switzerland", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id:5)
-Team.create(name: "Equador", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id:5)
+Team.create(name: "Ecuador", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id:5)
 
 Team.create(name: "Argentina", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id: Group.find_by_name("F").id)
 Team.create(name: "Bosnia and Herzegovina", win:"0", draw:"0", loss:0, gf:0, ga:0, points:0, group_id:6)
