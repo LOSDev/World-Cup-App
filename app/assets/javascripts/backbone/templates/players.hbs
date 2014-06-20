@@ -1,0 +1,26 @@
+<h2>Top Scorers</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      
+      <th>Name</th>
+      <th>Team</th>
+      <th>Matches</th>
+      <th>Goals</th>
+      <th>Assists</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    {{#each players}}
+      <tr>
+        
+        <td>{{first_name}} {{ last_name }}</td>
+        <td>{{team_id}}</td>
+        <td>{{matches}}</td>
+        <td>{{goals}}</td>
+        <td>{{assists}}</td>        
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
