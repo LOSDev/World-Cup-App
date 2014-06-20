@@ -7,6 +7,12 @@ class MatchesController < ApplicationController
   # GET /matches.json
   def index
     @matches = Match.all
+    respond_to do |format|
+      format.html { authenticate_user! }
+      format.json {  }
+      
+    end
+    
   end
 
   # GET /matches/1

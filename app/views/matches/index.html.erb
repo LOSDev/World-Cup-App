@@ -1,6 +1,6 @@
 <h1>Listing matches</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Home team</th>
@@ -23,10 +23,9 @@
         <td><%= match.home_goals %></td>
         <td><%= match.away_goals %></td>
         <td><%= match.play_time %></td>
-        <td><%= match.group %></td>
+        <td><%= match.group.name %></td>
         <td><%= link_to 'Show', match %></td>
         <td><%= link_to 'Edit', edit_match_path(match) %></td>
-        <td><%= link_to 'Destroy', match, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
