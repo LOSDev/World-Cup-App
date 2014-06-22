@@ -4,7 +4,8 @@ json.teams @group.teams.sort_by! { |team| [-team.points, team.ga-team.gf] } do |
   json.flag image_tag(team.flag, width: '40')
 end
 json.matches @group.matches do |match|
-  json.extract! match, :id, :home_goals, :away_goals, :group_id
+  json.extract! match, :id, :home_goals, :away_goals
+  json.group match.group.name
   json.home_team match.home_team
   json.away_team match.away_team
   json.home_flag image_tag(match.home_team.flag)

@@ -18,7 +18,7 @@ Match.create(home_team_id: Team.find_by_name("Iran").id, away_team_id: Team.find
 Match.create(home_team_id: Team.find_by_name("Ghana").id, away_team_id: Team.find_by_name("USA").id, play_time: DateTime.new(2014, 6, 16, 18, 0, 0), group_id:7)
 
 Match.create(home_team_id: Team.find_by_name("Belgium").id, away_team_id: Team.find_by_name("Algeria").id, play_time: DateTime.new(2014, 6, 17, 13, 0, 0), group_id:8)
-Match.create(home_team_id: Team.find_by_name("Brazil"), away_team_id: Team.find_by_name("Mexico").id, play_time: DateTime.new(2014, 6, 17, 16, 0, 0), group_id:1)
+Match.create(home_team_id: Team.find_by_name("Brazil").id, away_team_id: Team.find_by_name("Mexico").id, play_time: DateTime.new(2014, 6, 17, 16, 0, 0), group_id:1)
 Match.create(home_team_id: Team.find_by_name("Russia").id, away_team_id: Team.find_by_name("Korea Republic").id, play_time: DateTime.new(2014, 6, 17, 18, 0, 0), group_id:8)
 
 Match.create(home_team_id: Team.find_by_name("Australia").id, away_team_id: Team.find_by_name("Netherlands").id, play_time: DateTime.new(2014, 6, 18, 13, 0, 0), group_id:2)
@@ -43,7 +43,7 @@ Match.create(home_team_id: Team.find_by_name("USA").id, away_team_id: Team.find_
 
 Match.create(home_team_id: Team.find_by_name("Netherlands").id, away_team_id: Team.find_by_name("Chile").id, play_time: DateTime.new(2014, 6, 23, 13, 0, 0), group_id:2)
 Match.create(home_team_id: Team.find_by_name("Australia").id, away_team_id: Team.find_by_name("Spain").id, play_time: DateTime.new(2014, 6, 23, 13, 0, 0), group_id:2)
-Match.create(home_team_id: Team.find_by_name("Cameroon").id, away_team_id: Team.find_by_name("Brazil"), play_time: DateTime.new(2014, 6, 23, 17, 0, 0), group_id:1)
+Match.create(home_team_id: Team.find_by_name("Cameroon").id, away_team_id: Team.find_by_name("Brazil").id, play_time: DateTime.new(2014, 6, 23, 17, 0, 0), group_id:1)
 Match.create(home_team_id: Team.find_by_name("Croatia").id, away_team_id: Team.find_by_name("Mexico").id, play_time: DateTime.new(2014, 6, 23, 17, 0, 0), group_id:1)
 
 Match.create(home_team_id: Team.find_by_name("Italy").id, away_team_id: Team.find_by_name("Uruguay").id, play_time: DateTime.new(2014, 6, 24, 13, 0, 0), group_id:4)

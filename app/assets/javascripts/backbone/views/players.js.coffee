@@ -20,8 +20,5 @@ class Worldcup.Views.Players extends Backbone.View
     @$el.html(@template(players: @collection.toJSON()))     
     @
 
-  renderPlayers: (model) ->   
-    v = new Worldcup.Views.Player({model: model})
-    @$el.append(v.render().el)
-
+  
   

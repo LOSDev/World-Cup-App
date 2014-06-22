@@ -1,21 +1,14 @@
 class Worldcup.Views.Matches extends Backbone.View
   tagname: 'div'
 
-  #template: HandlebarsTemplates['backbone/templates/matches']
+  template: HandlebarsTemplates['backbone/templates/matches']
 
   initialize: ->
     @listenTo @collection, 'reset', @render
-    @collection.fetch({reset: true})
-    
-
+    @collection.fetch({reset: true}) if @collection.length is 0
 
   render: ->
-    @$el.html()
-    @collection.forEach @renderMatches, @      
+    @$el.html(@template(matches: @collection.toJSON()))      
     @
-
-  renderMatches: (model) ->   
-    v = new Worldcup.Views.Match({model: model})
-    @$el.append(v.render().el)
 
   
