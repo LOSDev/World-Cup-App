@@ -5,7 +5,6 @@ class Worldcup.Models.Match extends Backbone.Model
     date = new Date(resp.play_time)
     
     resp.startYear = date.getFullYear()
-    console.log date.getMonth() + 1
     resp.startMonth = @padStr(date.getMonth() + 1)
     resp.startDay = @padStr(date.getDate())    
     resp.startHours =  @padStr(date.getHours())

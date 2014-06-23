@@ -19,6 +19,12 @@ class Worldcup.Routers.MainRouter extends Backbone.Router
     v = new Worldcup.Views.Players({collection: new Worldcup.Collections.Players()})
     @childViews.push(v)
     @changeMainView(v)
+    @changeActiveHeader(3)
+
+  changeActiveHeader: (element) ->
+    $('#header li').removeClass('active')
+    selString = "#header li:eq(#{element})"
+    $(selString).addClass('active')
 
   showGroup: (id) ->
     @renderGroupsView(id)
@@ -26,6 +32,7 @@ class Worldcup.Routers.MainRouter extends Backbone.Router
 
   groups: ->
     @renderGroupsView()
+    @changeActiveHeader(1)
 
   layoutViews: ->
     
@@ -39,6 +46,7 @@ class Worldcup.Routers.MainRouter extends Backbone.Router
 
   matches: ->
     @renderMatchesView()
+    @changeActiveHeader(2)
 
   renderMatchesView: ->
     v = new Worldcup.Views.Matches({collection: new Worldcup.Collections.Matches()})

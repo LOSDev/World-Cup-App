@@ -5,9 +5,9 @@
       
       <th>Name</th>
       <th>Team</th>
-      <th><a href="" class="btn btn-sm btn-default">Matches</a></th>
-      <th><a href="" class="btn btn-sm btn-default">Goals</a></th>
-      <th><a href="" class="btn btn-sm btn-default">Assists</a></th>
+      <th ><a href="" class="btn btn-sm btn-default">Matches</a></th>
+      <th align="center"><a href="" class="btn btn-sm btn-default">Goals</a></th>
+      <th align="center"><a href="" class="btn btn-sm btn-default">Assists</a></th>
      
     </tr>
   </thead>
@@ -17,9 +17,9 @@
         
         <td>{{first_name}} {{ last_name }}</td>
         <td>{{{flag}}}</td>
-        <td>{{matches}}</td>
-        <td>{{goals}}</td>
-        <td>{{assists}}</td>        
+        <td><span>{{ matches }}</span></td>
+        <td><span>{{ goals }}</span></td>
+        <td><span>{{ assists }}</span></td>        
       </tr>
     {{/each}}
   </tbody>
