@@ -4,7 +4,7 @@ class Worldcup.Views.Matches extends Backbone.View
   template: HandlebarsTemplates['backbone/templates/matches']
 
   events:
-    "click .nav li": "sortMatches"
+    "click #matches-nav li": "sortMatches"
 
   sortMatches: (e) ->
     e.preventDefault()
@@ -18,17 +18,17 @@ class Worldcup.Views.Matches extends Backbone.View
       
     if t.text() is "All Matches"
       @clickedItem = '#matches-nav li:eq(0)'
-      @filteredCollection = null
+      @filteredCollection = @collection
 
     if t.text() is "Today's Matches"
       @clickedItem = '#matches-nav li:eq(1)'      
       @filteredCollection = @collection.todaysMatches(new Date())
-      
-    @render()
+
+    v = new Worldcup.Views.MatchesViews({collection: @filteredCollection})
+    @swapMatchesView(v)
 
   initialize: ->
     
-    @listenTo Worldcup.Vent, "matches:recent", @sortMatches
     @listenTo @collection, 'reset', @render
     if @collection.length is 0
       @navView = new Worldcup.Views.MatchesNav()
@@ -36,10 +36,20 @@ class Worldcup.Views.Matches extends Backbone.View
       @collection.fetch({reset: true}) 
 
   render: ->
-    collection = if @filteredCollection then @filteredCollection else @collection
-    @$el.html(@template(matches: collection.toJSON()))
+    @$el.html(@template())
     @$('#matches-nav').html(@navView.render().el) if @navView
-    @$(@clickedItem).addClass('active') if @clickedItem
+    v = new Worldcup.Views.MatchesViews({collection: @collection})
+    @swapMatchesView(v)
     @
+
+  swapMatchesView: (v) ->
+    @changeCurrentMatchesView(v)
+    @$('#matches-nav li').removeClass('active')
+    @$(@clickedItem).addClass('active') if @clickedItem
+    @$('#matches-views').html(@currentMatchesView.render().el)
+
+  changeCurrentMatchesView: (v) ->
+    @currentMatchesView.leave() if @currentMatchesView
+    @currentMatchesView = v
     
   

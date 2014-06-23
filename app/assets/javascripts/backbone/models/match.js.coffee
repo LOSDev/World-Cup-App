@@ -5,7 +5,8 @@ class Worldcup.Models.Match extends Backbone.Model
     date = new Date(resp.play_time)
     
     resp.startYear = date.getFullYear()
-    resp.startMonth = @padStr(date.getMonth())
+    console.log date.getMonth() + 1
+    resp.startMonth = @padStr(date.getMonth() + 1)
     resp.startDay = @padStr(date.getDate())    
     resp.startHours =  @padStr(date.getHours())
     
@@ -30,7 +31,7 @@ class Worldcup.Collections.Matches extends Backbone.Collection
   todaysMatches: (date) ->    
     filtered = @filter((data) =>
       return false if data.get("startYear") isnt @padStr(date.getFullYear())
-      return false if data.get("startMonth") isnt @padStr(date.getMonth())
+      return false if data.get("startMonth") isnt @padStr(date.getMonth() + 1)
       return false if data.get("startDay") isnt @padStr(date.getDate())
       return true
       )
@@ -41,7 +42,7 @@ class Worldcup.Collections.Matches extends Backbone.Collection
   recentMatches: (date) ->    
     filtered = @filter((data) =>
       return false if data.get("startYear") > @padStr(date.getFullYear())
-      return false if data.get("startMonth") > @padStr(date.getMonth())
+      return false if data.get("startMonth") > @padStr(date.getMonth() + 1)
       return false if data.get("startDay") >= @padStr(date.getDate())
       return true
       )
