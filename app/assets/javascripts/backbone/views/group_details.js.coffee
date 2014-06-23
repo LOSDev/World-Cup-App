@@ -10,7 +10,7 @@ class Worldcup.Views.GroupDetails extends Backbone.View
   renderGroupDetails: ->
     
     c = new Worldcup.Collections.Matches()
-    c.add(@model.get("matches"))
+    c.add(@model.get("matches"), {parse: true})
     
     v = new Worldcup.Views.Matches({collection:c})
     @$el.html(@template(@model.toJSON()))
