@@ -22,8 +22,7 @@ class Worldcup.Views.Matches extends Backbone.View
 
     if t.text() is "Knockout Matches"
       @clickedItem = '#matches-nav li:eq(3)'
-      collection = @collection.myFilter({match_type: "Second Round"})
-      console.log collection
+      collection = @collection.knockoutMatches()
       @filteredCollection = collection
       
 

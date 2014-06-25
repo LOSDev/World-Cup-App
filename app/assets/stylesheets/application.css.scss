@@ -16,10 +16,15 @@ $table-bg: #5cb85c;
 $table-bg-accent: #dff0d8;
 $component-active-bg: #5cb85c;
 $nav-link-hover-bg: #5cb85c;
+
 @import "bootstrap";
 
 body{
   background: #EFEFEF !important;
+}
+
+.nav-pills a{
+  background: #dff0d8;
 }
 
 .jumbotron {

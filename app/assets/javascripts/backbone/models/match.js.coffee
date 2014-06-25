@@ -23,11 +23,7 @@ class Worldcup.Collections.Matches extends Backbone.Collection
   model: Worldcup.Models.Match
   url: '/matches'
 
-  myFilter: (filters) ->
-    results = @where(filters)
-    results.reverse()
-    new Worldcup.Collections.Matches(results)
-
+  
   todaysMatches: (date) ->    
     filtered = @filter((data) =>
       return false if data.get("startYear") isnt @padStr(date.getFullYear())
@@ -47,6 +43,15 @@ class Worldcup.Collections.Matches extends Backbone.Collection
       return true
       )
     new Worldcup.Collections.Matches(filtered)
+
+  knockoutMatches: (date) ->    
+    filtered = @filter((data) =>
+      return false if data.get("match_type") is null
+      return true
+      )
+    
+    new Worldcup.Collections.Matches(filtered)
+    
 
   padStr: (i) ->
     if i < 10 then "0" + i else i
