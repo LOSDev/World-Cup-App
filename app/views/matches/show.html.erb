@@ -2,12 +2,12 @@
 
 <p>
   <strong>Home team:</strong>
-  <%= @match.home_team %>
+  <%= @match.home_team.name %>
 </p>
 
 <p>
   <strong>Away team:</strong>
-  <%= @match.away_team %>
+  <%= @match.away_team.name %>
 </p>
 
 <p>
@@ -27,7 +27,7 @@
 
 <p>
   <strong>Group:</strong>
-  <%= @match.group %>
+  <%= @match.group.name if @match.group %>
 </p>
 
 <%= link_to 'Edit', edit_match_path(@match) %> |

@@ -8,7 +8,7 @@ class MatchesController < ApplicationController
   def index
     @matches = Match.all
     respond_to do |format|
-      format.html { authenticate_user! }
+      format.html {  }
       format.json {  }
       
     end
@@ -77,6 +77,6 @@ class MatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
-      params.require(:match).permit(:home_team, :away_team, :home_goals, :away_goals, :play_time, :group_id)
+      params.require(:match).permit(:home_team_id, :away_team_id, :home_goals, :away_goals, :play_time, :group_id)
     end
 end

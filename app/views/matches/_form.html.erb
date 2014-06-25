@@ -12,12 +12,12 @@
   <% end %>
   <div class="field">
     <%= f.label :home_team %><br>
-    <%= collection_select(:match, :home_team, Team.ordered, :name, :name) %>
+    <%= collection_select(:match, :home_team_id, Team.ordered, :id, :name) %>
   </div>
   
   <div class="field">
     <%= f.label :away_team %><br>
-    <%= collection_select(:match, :away_team, Team.ordered, :name, :name) %>
+    <%= collection_select(:match, :away_team_id, Team.ordered, :id, :name) %>
   </div>
   <div class="field">
     <%= f.label :home_goals %><br>
@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :group %><br>
-    <%= collection_select(:match, :group_id, Group.all, :id, :name) %>
+    <%= collection_select(:match, :group_id, Group.all, :id, :name, {include_blank: true}) %>
   </div>
   <div class="actions">
     <%= f.submit %>
