@@ -12,8 +12,15 @@
  *= require_tree .
  */
 
+$table-bg: #5cb85c;
+$table-bg-accent: #dff0d8;
+$component-active-bg: #5cb85c;
+$nav-link-hover-bg: #5cb85c;
 @import "bootstrap";
 
+body{
+  background: #EFEFEF !important;
+}
 
 .jumbotron {
     
@@ -24,4 +31,8 @@
     color: #fff !important;
     text-align: right;
 }
+.table td, th {
+  font-size: 17px;
+}
+
 

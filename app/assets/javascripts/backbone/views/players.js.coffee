@@ -1,6 +1,6 @@
 class Worldcup.Views.Players extends Backbone.View
   tagname: 'div'
-
+  
   template: HandlebarsTemplates['backbone/templates/players']
 
   initialize: ->
