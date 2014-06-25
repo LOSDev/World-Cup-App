@@ -25,6 +25,7 @@ class Worldcup.Collections.Matches extends Backbone.Collection
 
   myFilter: (filters) ->
     results = @where(filters)
+    results.reverse()
     new Worldcup.Collections.Matches(results)
 
   todaysMatches: (date) ->    

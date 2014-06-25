@@ -20,6 +20,13 @@ class Worldcup.Views.Matches extends Backbone.View
       @clickedItem = '#matches-nav li:eq(0)'
       @filteredCollection = @collection
 
+    if t.text() is "Knockout Matches"
+      @clickedItem = '#matches-nav li:eq(3)'
+      collection = @collection.myFilter({match_type: "Second Round"})
+      console.log collection
+      @filteredCollection = collection
+      
+
     if t.text() is "Today's Matches"
       @clickedItem = '#matches-nav li:eq(1)'      
       @filteredCollection = @collection.todaysMatches(new Date())

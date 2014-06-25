@@ -60,3 +60,9 @@ Match.create(home_team_id: Team.find_by_name("Portugal").id, away_team_id: Team.
 Match.create(home_team_id: Team.find_by_name("USA").id, away_team_id: Team.find_by_name("Germany").id, play_time: DateTime.new(2014, 6, 26, 13, 0, 0), group_id:7)
 Match.create(home_team_id: Team.find_by_name("Korea Republic").id, away_team_id: Team.find_by_name("Belgium").id, play_time: DateTime.new(2014, 6, 26, 17, 0, 0), group_id:8)
 Match.create(home_team_id: Team.find_by_name("Algeria").id, away_team_id: Team.find_by_name("Russia").id, play_time: DateTime.new(2014, 6, 26, 17, 0, 0), group_id:8)
+
+Match.create(home_team_id: Team.find_by_name("Brazil").id, away_team_id: Team.find_by_name("Chile").id, play_time: DateTime.new(2014, 6, 28, 13, 0, 0), match_type: "Second Round")
+Match.create(home_team_id: Team.find_by_name("Colombia").id, away_team_id: Team.find_by_name("Uruguay").id, play_time: DateTime.new(2014, 6, 28, 17, 0, 0), match_type: "Second Round")
+
+Match.create(home_team_id: Team.find_by_name("Netherlands").id, away_team_id: Team.find_by_name("Mexico").id, play_time: DateTime.new(2014, 6, 29, 13, 0, 0), match_type: "Second Round")
+Match.create(home_team_id: Team.find_by_name("Costa Rica").id, away_team_id: Team.find_by_name("Greece").id, play_time: DateTime.new(2014, 6, 29, 17, 0, 0), match_type: "Second Round")
