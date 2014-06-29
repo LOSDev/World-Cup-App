@@ -23,6 +23,8 @@ $pagination-bg: #dff0d8;
 $pagination-hover-color: #fff;
 $pagination-hover-bg: #5cb85c;
 $pagination-hover-border: #5cb85c;
+$input-border-focus: #5cb85c;
+$input-bg: #dff0d8;
 @import "bootstrap";
 
 body{
@@ -45,5 +47,4 @@ body{
 .table td, th {
   font-size: 16px;
 }
-
 
