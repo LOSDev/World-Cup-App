@@ -16,7 +16,13 @@ $table-bg: #5cb85c;
 $table-bg-accent: #dff0d8;
 $component-active-bg: #5cb85c;
 $nav-link-hover-bg: #5cb85c;
-
+$pagination-active-bg: #5cb85c;
+$pagination-active-border: #5cb85c;
+$pagination-color: #5cb85c;
+$pagination-bg: #dff0d8;
+$pagination-hover-color: #fff;
+$pagination-hover-bg: #5cb85c;
+$pagination-hover-border: #5cb85c;
 @import "bootstrap";
 
 body{
