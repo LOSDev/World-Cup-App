@@ -10,3 +10,4 @@ window.Worldcup =
   Routers: {}
   Views: {}
   Vent: _.clone(Backbone.Events)
+  

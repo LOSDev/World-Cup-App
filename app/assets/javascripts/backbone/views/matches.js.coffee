@@ -4,32 +4,41 @@ class Worldcup.Views.Matches extends Backbone.View
   template: HandlebarsTemplates['backbone/templates/matches']
 
   events:
-    "click #matches-nav li": "sortMatches"
+    "change #team-select": "showTeam"
+    "click .match-nav-item": "sortMatches"
+
+  showTeam: (e) ->
+    e.preventDefault()
+    value = @$(e.currentTarget).val()
+   
+    @filteredCollection = @collection.teamMatches(value)
+    
+    v = new Worldcup.Views.MatchesViews({collection: @filteredCollection})
+    @swapMatchesView(v)
 
   sortMatches: (e) ->
     e.preventDefault()
     t = @$(e.currentTarget)
     
     if t.text() is "Recent Results"
-      @clickedItem = '#matches-nav li:eq(2)'
+      @clickedItem = '.match-nav-item:eq(2)'
       collection = @collection.recentMatches(new Date()).last(8).reverse()
       @filteredCollection = new Worldcup.Collections.Matches()
       @filteredCollection.add(collection)
       
     if t.text() is "All Matches"
-      @clickedItem = '#matches-nav li:eq(0)'
+      @clickedItem = '.match-nav-item:eq(0)'
       @filteredCollection = @collection
 
     if t.text() is "Knockout Matches"
-      @clickedItem = '#matches-nav li:eq(3)'
+      @clickedItem = '.match-nav-item:eq(3)'
       collection = @collection.knockoutMatches()
       @filteredCollection = collection
       
 
     if t.text() is "Today's Matches"
-      @clickedItem = '#matches-nav li:eq(1)'      
+      @clickedItem = '.match-nav-item:eq(1)'      
       @filteredCollection = @collection.todaysMatches(new Date())
-
     v = new Worldcup.Views.MatchesViews({collection: @filteredCollection})
     @swapMatchesView(v)
 
@@ -37,8 +46,8 @@ class Worldcup.Views.Matches extends Backbone.View
     
     @listenTo @collection, 'reset', @render
     if @collection.length is 0
-      @navView = new Worldcup.Views.MatchesNav()
-      @clickedItem = '#matches-nav li:eq(0)'
+      @navView = new Worldcup.Views.MatchesNav(collection: new Worldcup.Collections.Groups())
+      @clickedItem = '.match-nav-item:eq(0)'
       @collection.fetch({reset: true}) 
 
   render: ->

@@ -23,6 +23,15 @@ class Worldcup.Collections.Matches extends Backbone.Collection
   model: Worldcup.Models.Match
   url: '/matches'
 
+  teamMatches: (team) ->
+    
+    filtered = @filter((data) =>
+      return true if data.get("home_team_id") is parseInt(team)
+      return true if data.get("away_team_id") is parseInt(team)
+      return false
+      )
+    new Worldcup.Collections.Matches(filtered)
+
   
   todaysMatches: (date) ->    
     filtered = @filter((data) =>

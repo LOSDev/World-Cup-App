@@ -1,7 +1,22 @@
 <ul class="nav nav-pills nav-justified">
-  <li><a href="">All Matches</a></li>
-  <li><a href="">Today's Matches</a></li>
-  <li><a href="">Recent Results</a></li>
-  <li><a href="">Knockout Matches</a></li>
+  <li>
+    
+    <select class="form-control" id="team-select">
+      <option disabled="diabled" selected="selected">Select Team</option>
+      {{#each groups}}
+        <optgroup label="Group {{ name }}">
+          {{#each teams}}
+            <option value="{{id}}">{{name}}</option>
+
+          {{/each}}
+        </optgroup>
+        
+      {{/each}}
+    </select>
+  </li>
+  <li class="match-nav-item"><a href="#">All Matches</a></li>
+  <li class="match-nav-item"><a href="#">Today's Matches</a></li>
+  <li class="match-nav-item"><a href="#">Recent Results</a></li>
+  <li class="match-nav-item"><a href="#">Knockout Matches</a></li>
 </ul>
 <br>
