@@ -47,20 +47,20 @@ class Worldcup.Views.Matches extends Backbone.View
   recentResults: ->
     
     @filteredCollection = @collection.recentMatches(new Date()) if @collection
-    @createNewView()
+    @render()
 
   nextMatches: ->
     @filteredCollection = @collection.nextMatches(new Date())
-    @createNewView()
+    @render()
 
   todaysMatches: ->
          
     @filteredCollection = @collection.todaysMatches(new Date())
-    @createNewView()
+    @render()
 
   knockoutMatches: (round) ->
     @filteredCollection = @collection.knockoutMatches(round)    
-    @createNewView()
+    @render()
 
   createNewView: ->
     v = new Worldcup.Views.MatchesViews({collection: @filteredCollection})
@@ -69,15 +69,18 @@ class Worldcup.Views.Matches extends Backbone.View
   initialize: ->
     
     @listenTo @collection, 'reset', @render
+    @listenTo @collection, 'reset', @recentResults
     if @collection.length is 0
       @navView = new Worldcup.Views.MatchesNav(collection: new Worldcup.Collections.Groups())
       @clickedItem = '.match-nav-item:eq(0)'
-      @collection.fetch({reset: true}) 
+      @collection.fetch({reset: true})
+    else 
+      @filteredCollection = @collection
 
   render: ->
     @$el.html(@template())
     @$('#matches-nav').html(@navView.render().el) if @navView
-    @recentResults()
+    @createNewView() if @filteredCollection
     @
 
   swapMatchesView: (v) ->
