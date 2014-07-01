@@ -2,9 +2,10 @@
 
  
 
-  <div class="panel panel-success match-table">
+  <div class="panel panel-success match-table match-view" data-id="{{ id }}">
+    <a href="#">
     <div class="panel-heading">
-      <span >{{match_type}} {{#if group }}Group {{/if}}{{ group }}</span></th>      
+      <span>{{match_type}} {{#if group }}Group {{/if}}{{ group }}</span></th>      
                
       <span class="badge pull-right">{{startDay}}.{{startMonth}}.{{ startYear }} at {{startHours}}:{{startMinutes}}</span>
     </div>
@@ -26,6 +27,9 @@
       </tbody>
       
     </table>
-  
+    </a>
+    <div class="match-details">
+      
+    </div>
   </div>
 {{/each}}
