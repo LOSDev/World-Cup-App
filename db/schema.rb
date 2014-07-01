@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625094825) do
+ActiveRecord::Schema.define(version: 20140701152856) do
+
+  create_table "events", force: true do |t|
+    t.string   "event_type"
+    t.string   "player"
+    t.string   "minute"
+    t.integer  "match_id"
+    t.boolean  "home_team"
+    t.boolean  "away_team"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["match_id"], name: "index_events_on_match_id"
 
   create_table "groups", force: true do |t|
     t.string   "name"

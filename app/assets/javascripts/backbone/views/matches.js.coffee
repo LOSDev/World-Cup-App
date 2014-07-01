@@ -14,7 +14,8 @@ class Worldcup.Views.Matches extends Backbone.View
     id = t.data("id")
     model = @collection.get(id)
     v = new Worldcup.Views.MatchDetails({model: model})
-    t.children('.match-details').html(v.render().el)
+    t.siblings('.match-details').html(v.render().el)
+
   showTeam: (e) ->
     e.preventDefault()
     @clickedItem = null

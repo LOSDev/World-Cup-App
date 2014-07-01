@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @event.type %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @event.player %>
+</p>
+
+<p>
+  <strong>Minute:</strong>
+  <%= @event.minute %>
+</p>
+
+<p>
+  <strong>Match:</strong>
+  <%= @event.match %>
+</p>
+
+<p>
+  <strong>Home team:</strong>
+  <%= @event.home_team %>
+</p>
+
+<p>
+  <strong>Away team:</strong>
+  <%= @event.away_team %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
