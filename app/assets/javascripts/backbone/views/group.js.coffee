@@ -10,6 +10,9 @@ class Worldcup.Views.Group extends Backbone.View
     
     Worldcup.Vent.trigger "group:show", @model
     Backbone.history.navigate "/groups/" + @model.attributes.name
+    $(e.currentTarget).siblings().children().removeClass("active")
+
+    $(e.currentTarget).children().addClass("active")
 
 
   render: ->

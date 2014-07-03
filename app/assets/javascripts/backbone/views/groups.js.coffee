@@ -18,15 +18,15 @@ class Worldcup.Views.Groups extends Backbone.View
   groupShow: (model) ->
     v = new Worldcup.Views.GroupDetails({model: model})
     @childViews.push(v)
-    @changeGroupView(v)
-    @render()
-    
+    @swapGroupDetails(v)
+
 
 
   render: ->    
     @$el.html(@template())
     @collection.forEach @renderGroup, @ 
     $('#teams').html(@currentGroupDetailsView.render().el) 
+    $("button:contains(\"#{@id}\")").addClass("active")    
     @
 
   renderGroup: (model) ->     
