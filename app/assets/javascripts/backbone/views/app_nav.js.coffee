@@ -11,7 +11,7 @@ class Worldcup.Views.AppNav extends Backbone.View
   showGroups: (e) ->
     e.preventDefault()    
     Worldcup.Vent.trigger "groups:show"
-    Backbone.history.navigate "/groups"
+    Backbone.history.navigate "/groups/A"
 
   showMatches: (e) ->
     e.preventDefault()  

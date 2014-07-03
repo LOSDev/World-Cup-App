@@ -13,7 +13,13 @@ class Worldcup.Routers.MainRouter extends Backbone.Router
     "groups": "groups"
     "groups/:id": "showGroup"
     "matches": "matches"
+    "matches/:id": "matches"
     "scorers": "scorers"
+
+  homepage: ->
+    
+    Backbone.history.navigate "/groups/"
+
 
   scorers: ->
     v = new Worldcup.Views.Players({collection: new Worldcup.Collections.Players()})
@@ -22,13 +28,14 @@ class Worldcup.Routers.MainRouter extends Backbone.Router
     @changeActiveHeader(3)
 
   changeActiveHeader: (element) ->
+    
     $('#header li').removeClass('active')
     selString = "#header li:eq(#{element})"
     $(selString).addClass('active')
 
   showGroup: (id) ->
     @renderGroupsView(id)
-    
+    @changeActiveHeader(1)
 
   groups: ->
     @renderGroupsView()
@@ -44,18 +51,23 @@ class Worldcup.Routers.MainRouter extends Backbone.Router
     @childViews.push(v)
     @changeMainView(v)
 
-  matches: ->
-    @renderMatchesView()
+
+  matches: (id = "Recent Results")->
+    @renderMatchesView(id)
     @changeActiveHeader(2)
 
-  renderMatchesView: ->
-    v = new Worldcup.Views.Matches({collection: new Worldcup.Collections.Matches()})
+  renderMatchesView: (id) ->
+    v = new Worldcup.Views.Matches({collection: new Worldcup.Collections.Matches(), id: id})
     @childViews.push(v)
     @changeMainView(v)
     
   changeMainView: (v) ->
+    
     @mainView.leave() if @mainView
     @mainView = v
-    $('#content').html(v.render().el)
+    $('#content').html(v.el)
+    v.render()
+    
+
 
     

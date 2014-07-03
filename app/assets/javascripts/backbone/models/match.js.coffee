@@ -25,8 +25,9 @@ class Worldcup.Collections.Matches extends Backbone.Collection
 
   teamMatches: (team) ->    
     filtered = @filter((data) =>
-      return true if data.get("home_team_id") is parseInt(team)
-      return true if data.get("away_team_id") is parseInt(team)
+      console.log 
+      return true if data.get("home_team").name is team
+      return true if data.get("away_team").name is team
       return false
       )
     new Worldcup.Collections.Matches(filtered)
@@ -61,12 +62,12 @@ class Worldcup.Collections.Matches extends Backbone.Collection
     col = new Worldcup.Collections.Matches(filtered).last(8).reverse()
     new Worldcup.Collections.Matches(col)
 
-  knockoutMatches: (round) ->    
+  knockoutMatches: (round) -> 
+
     filtered = @filter((data) =>
       return true if data.get("match_type") is round
       return false
       )
-    
     new Worldcup.Collections.Matches(filtered)
     
 
