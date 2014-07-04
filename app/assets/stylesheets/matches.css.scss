@@ -4,9 +4,13 @@
 .match-view table{
   background-color: #FFFFFF;
 }
-.match-view td span{
+.match-view td{
   font-size: 25px;
 }
 .match-view th span{
   font-size: 14px;
+}
+
+.match-details table td{
+  font-size: 16px !important;
 }

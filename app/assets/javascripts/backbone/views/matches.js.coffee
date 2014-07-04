@@ -16,7 +16,7 @@ class Worldcup.Views.Matches extends Backbone.View
     v = new Worldcup.Views.MatchDetails({model: model})
     $('.match-details').html("")
     if id isnt @lastItem
-      t.siblings('.match-details').html(v.render().el) 
+      t.children().children('.match-details').html(v.render().el) 
       @lastItem = id
     else
       @lastItem = null

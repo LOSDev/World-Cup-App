@@ -1,17 +1,15 @@
 {{#each matches}}
 
  
-
+<a href="#"  class="match-view"  data-id="{{ id }}">
   <div class="panel panel-success">
-    <a href="#"  class="match-view"  data-id="{{ id }}">
+    
     <div class="panel-heading">
       <span>{{match_type}} {{#if group }}Group {{/if}}{{ group }}</span></th>      
                
       <span class="badge pull-right">{{startDay}}.{{startMonth}}.{{ startYear }} at {{startHours}}:{{startMinutes}}</span>
     </div>
-    <table class="table">
-      
-      
+    <table class="table">      
       <tbody>
         <tr>
           <td width="15%" align="right"><span>{{{ home_flag }}}</span></td>
@@ -23,13 +21,12 @@
           <td width="15%" align="left"><span>{{{ away_flag }}}</span></td>
 
         </tr>
-      </tbody>
-      
+      </tbody>      
     </table>
-    </a>
+   
     <div class="match-details">
       
     </div>
   </div>
-  
+   </a>
 {{/each}}
