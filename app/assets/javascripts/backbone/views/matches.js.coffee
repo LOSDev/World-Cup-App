@@ -14,7 +14,14 @@ class Worldcup.Views.Matches extends Backbone.View
     id = t.data("id")
     model = @collection.get(id)
     v = new Worldcup.Views.MatchDetails({model: model})
-    t.siblings('.match-details').html(v.render().el)
+    $('.match-details').html("")
+    if id isnt @lastItem
+      t.siblings('.match-details').html(v.render().el) 
+      @lastItem = id
+    else
+      @lastItem = null
+    
+    
 
   showTeam: (value) ->
     Backbone.history.navigate("/matches/" + value)
@@ -96,7 +103,7 @@ class Worldcup.Views.Matches extends Backbone.View
 
 
   initialize: ->
-    
+    @lastItem = null
     @listenTo @collection, 'reset', @render
     
     if @collection.length is 0

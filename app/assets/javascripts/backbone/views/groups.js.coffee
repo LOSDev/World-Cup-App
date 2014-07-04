@@ -26,7 +26,7 @@ class Worldcup.Views.Groups extends Backbone.View
     @$el.html(@template())
     @collection.forEach @renderGroup, @ 
     $('#teams').html(@currentGroupDetailsView.render().el) 
-    $("button:contains(\"#{@id}\")").addClass("active")    
+    $(".btn-group button:contains('#{@id}')").addClass("active")    
     @
 
   renderGroup: (model) ->     
