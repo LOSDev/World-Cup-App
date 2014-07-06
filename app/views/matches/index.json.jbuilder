@@ -1,5 +1,5 @@
 json.array!(@matches) do |match|
-  json.extract! match, :id, :home_team, :away_team, :home_goals, :away_goals, :match_type, :home_team_id, :away_team_id
+  json.extract! match, :id, :home_team, :away_team, :home_goals, :away_goals, :match_type, :home_team_id, :away_team_id, :extra_time
   if match.group
     json.group match.group.name
   end

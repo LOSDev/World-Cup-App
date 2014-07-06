@@ -5,9 +5,11 @@
   <div class="panel panel-success">
     
     <div class="panel-heading">
-      <span>{{match_type}} {{#if group }}Group {{/if}}{{ group }}</span></th>      
-               
-      <span class="badge pull-right">{{startDay}}.{{startMonth}}.{{ startYear }} at {{startHours}}:{{startMinutes}}</span>
+      <p>
+        <span class="pull-left">{{match_type}} {{#if group }}Group {{/if}}{{ group }}</span> 
+      
+        <span class="pull-right">{{startDay}}.{{startMonth}}.{{ startYear }} at {{startHours}}:{{startMinutes}}</span>        
+      </p>       
     </div>
     <table class="table">      
       <tbody>
@@ -15,8 +17,10 @@
           <td width="15%" align="right"><span>{{{ home_flag }}}</span></td>
 
           <td width="25%" align="center"><span>{{ home_team.name }}</span></td>
-          <td width="20%" align="center"><span>{{ home_goals }} - {{ away_goals}}</span></td>
-          
+          <td width="20%" align="center"><span>{{ home_goals }} - {{ away_goals}}</span>
+            
+              <small><br>{{extra_time}}</small>
+          </td>          
           <td width="25%" align="center"><span>{{ away_team.name }}</span></td>
           <td width="15%" align="left"><span>{{{ away_flag }}}</span></td>
 
