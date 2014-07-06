@@ -55,16 +55,25 @@ class Worldcup.Views.Matches extends Backbone.View
       
     if t is "Quarter Finals"
       @quarterFinals()
+
+    if t is "Semi Finals"
+      @semiFinals()
       
   roundOf16: ->
-    @clickedItem = '.match-nav-item:eq(2)'
+    @clickedItem = '.match-nav-item:eq(1)'
     @filteredCollection = @collection.knockoutMatches("Round of 16")
     @render()
 
   quarterFinals: ->
-    @clickedItem = '.match-nav-item:eq(3)'
+    @clickedItem = '.match-nav-item:eq(2)'
     @filteredCollection = @collection.knockoutMatches("Quarter Final")   
     @render()
+
+  semiFinals: ->
+    @clickedItem = '.match-nav-item:eq(3)'
+    @filteredCollection = @collection.knockoutMatches("Semi Final")   
+    @render()
+
   recentResults: ->
     @clickedItem = '.match-nav-item:eq(0)'
     @filteredCollection = @collection.recentMatches(new Date()) if @collection

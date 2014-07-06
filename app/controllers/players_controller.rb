@@ -5,6 +5,10 @@ class PlayersController < ApplicationController
   # GET /players.json
   def index
     @players = Player.all.sort_by! { |player| [-player.goals, -player.assists, player.matches] }
+    respond_to do |format|
+      format.html { authenticate_user! }
+      format.json {  }
+    end
   end
 
   # GET /players/1

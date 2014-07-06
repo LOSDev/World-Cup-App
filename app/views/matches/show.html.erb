@@ -29,6 +29,8 @@
   <strong>Group:</strong>
   <%= @match.group.name if @match.group %>
 </p>
-
+<%= link_to 'Events', match_events_path(@match) %>
+<br>
+<br>
 <%= link_to 'Edit', edit_match_path(@match) %> |
 <%= link_to 'Back', matches_path %>

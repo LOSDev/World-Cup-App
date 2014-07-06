@@ -8,9 +8,8 @@ class MatchesController < ApplicationController
   def index
     @matches = Match.all
     respond_to do |format|
-      format.html {  }
+      format.html { authenticate_user! }
       format.json {  }
-      
     end
     
   end
@@ -18,6 +17,10 @@ class MatchesController < ApplicationController
   # GET /matches/1
   # GET /matches/1.json
   def show
+    respond_to do |format|
+      format.html { authenticate_user! }
+      format.json {  }
+    end
   end
 
   # GET /matches/new

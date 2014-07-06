@@ -2,7 +2,7 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @event.type %>
+  <%= @event.event_type %>
 </p>
 
 <p>
@@ -16,11 +16,6 @@
 </p>
 
 <p>
-  <strong>Match:</strong>
-  <%= @event.match %>
-</p>
-
-<p>
   <strong>Home team:</strong>
   <%= @event.home_team %>
 </p>
@@ -30,5 +25,5 @@
   <%= @event.away_team %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Edit', edit_match_event_path(@match, @event) %> |
+<%= link_to 'Back', match_events_path(@match) %>

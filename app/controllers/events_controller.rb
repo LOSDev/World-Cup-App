@@ -1,10 +1,16 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_filter :load_match
+  before_action :authenticate_user!, except: [:index]
 
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = @match.events.sort_by{ |a| (a.minute.to_i)}
+    respond_to do |format|
+      format.html { authenticate_user! }
+      format.json {  }
+    end
   end
 
   # GET /events/1
@@ -14,7 +20,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @event = Event.new
+    @event = @match.events.new
   end
 
   # GET /events/1/edit
@@ -24,11 +30,11 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
+    @event = @match.events.new(event_params)
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to match_events_path(@match), notice: 'Event was successfully created.' }
         format.json { render action: 'show', status: :created, location: @event }
       else
         format.html { render action: 'new' }
@@ -42,7 +48,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to match_events_path(@match), notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -56,12 +62,15 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url }
+      format.html { redirect_to match_events_path(@match) }
       format.json { head :no_content }
     end
   end
 
   private
+    def load_match
+      @match = Match.find(params[:match_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
@@ -69,6 +78,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:type, :player, :minute, :match_id, :home_team, :away_team)
+      params.require(:event).permit(:event_type, :player, :minute, :match_id, :home_team, :away_team)
     end
 end

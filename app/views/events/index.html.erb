@@ -1,12 +1,12 @@
-<h1>Listing events</h1>
+<h1>Events for <%= @match.home_team.name %> - <%= @match.away_team.name %></h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Type</th>
       <th>Player</th>
       <th>Minute</th>
-      <th>Match</th>
+      
       <th>Home team</th>
       <th>Away team</th>
       <th></th>
@@ -18,15 +18,15 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.type %></td>
+        <td><%= event.event_type %></td>
         <td><%= event.player %></td>
         <td><%= event.minute %></td>
-        <td><%= event.match %></td>
+        
         <td><%= event.home_team %></td>
         <td><%= event.away_team %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', match_event_path(event.match_id, event) %></td>
+        <td><%= link_to 'Edit', edit_match_event_path(event.match_id, event) %></td>
+        <td><%= link_to 'Destroy', match_event_path(event.match_id, event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,7 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'New Event', new_match_event_path(@match) %>
+<br><br>
+
+<%= link_to 'Back', match_path(@match) %>

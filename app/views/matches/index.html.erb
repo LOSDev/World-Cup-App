@@ -1,6 +1,6 @@
 <h1>Listing matches</h1>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Home team</th>
@@ -24,6 +24,7 @@
         <td><%= match.away_goals %></td>
         <td><%= match.play_time %></td>
         <td><%= match.group.name if match.group %></td>
+        <td><%= link_to 'Events', match_events_path(match) %></td>
         <td><%= link_to 'Show', match %></td>
         <td><%= link_to 'Edit', edit_match_path(match) %></td>
       </tr>
