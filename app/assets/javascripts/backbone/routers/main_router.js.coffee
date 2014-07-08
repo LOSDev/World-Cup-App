@@ -52,7 +52,7 @@ class Worldcup.Routers.MainRouter extends Backbone.Router
     @changeMainView(v)
 
 
-  matches: (id = "Recent Results")->
+  matches: (id = "recent-results")->
     @renderMatchesView(id)
     @changeActiveHeader(2)
 

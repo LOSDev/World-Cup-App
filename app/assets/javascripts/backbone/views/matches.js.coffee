@@ -39,24 +39,24 @@ class Worldcup.Views.Matches extends Backbone.View
 
   sortClick: (e) ->
     e.preventDefault()
-    t = @$(e.currentTarget).text()
+    t = @$(e.currentTarget).text().toLowerCase().replace(/\s+/g, '-')
     Backbone.history.navigate("/matches/" + t)
     @sortMatches(t)
     
   sortMatches: (t) ->
-    if t is "Recent Results"      
+    if t is "recent-results"      
       @recentResults()
 
-    if t is "Upcoming Matches"
+    if t is "upcoming-matches"
       @nextMatches()
 
-    if t is "Round of 16"       
+    if t is "round-of-16"       
       @roundOf16()
       
-    if t is "Quarter Finals"
+    if t is "quarter-finals"
       @quarterFinals()
 
-    if t is "Semi Finals"
+    if t is "semi-finals"
       @semiFinals()
       
   roundOf16: ->
@@ -98,14 +98,16 @@ class Worldcup.Views.Matches extends Backbone.View
 
   addListener: (id) ->
     
-    if id is "Recent Results"
+    if id is "recent-results"
       @listenTo @collection, 'reset', @recentResults
-    else if id is "Upcoming Matches"
+    else if id is "upcoming-matches"
       @listenTo @collection, 'reset', @nextMatches
-    else if id is "Round of 16"
+    else if id is "round-of-16"
       @listenTo @collection, 'reset', @roundOf16
-    else if id is "Quarter Finals"
+    else if id is "quarter-finals"
       @listenTo @collection, 'reset', @quarterFinals
+    else if id is "semi-finals"
+      @listenTo @collection, 'reset', @semiFinals
     else
       @listenTo @collection, 'reset', ->
         @showTeam(id)
@@ -114,13 +116,15 @@ class Worldcup.Views.Matches extends Backbone.View
   initialize: ->
     @lastItem = null
     @listenTo @collection, 'reset', @render
-    
     if @collection.length is 0
-      @addListener(@id)
       @navView = new Worldcup.Views.MatchesNav(collection: new Worldcup.Collections.Groups())
+      @addListener(@id)
+     
       @collection.fetch({reset: true})
     else 
       @filteredCollection = @collection
+    
+
 
   render: ->
     @$el.html(@template())

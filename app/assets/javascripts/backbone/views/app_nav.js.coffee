@@ -16,7 +16,7 @@ class Worldcup.Views.AppNav extends Backbone.View
   showMatches: (e) ->
     e.preventDefault()  
     Worldcup.Vent.trigger "matches:show"  
-    Backbone.history.navigate "/matches"
+    Backbone.history.navigate "/matches/recent-results"
 
   showScorers: (e) ->
     e.preventDefault()    
