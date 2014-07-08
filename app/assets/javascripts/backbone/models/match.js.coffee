@@ -25,9 +25,10 @@ class Worldcup.Collections.Matches extends Backbone.Collection
 
   teamMatches: (team) ->    
     filtered = @filter((data) =>
-      console.log 
-      return true if data.get("home_team").name is team
-      return true if data.get("away_team").name is team
+      if data.get("home_team")
+        return true if data.get("home_team").name is team
+      if data.get("away_team")
+        return true if data.get("away_team").name is team
       return false
       )
     new Worldcup.Collections.Matches(filtered)

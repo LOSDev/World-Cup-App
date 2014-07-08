@@ -80,3 +80,6 @@ Match.create(home_team_id: Team.find_by_name("Netherlands").id, away_team_id: Te
 
 Match.create(home_team_id: Team.find_by_name("Brazil").id, away_team_id: Team.find_by_name("Germany").id, play_time: DateTime.new(2014, 7, 8, 17, 0, 0), match_type: "Semi Final")
 Match.create(home_team_id: Team.find_by_name("Netherlands").id, away_team_id: Team.find_by_name("Argentina").id, play_time: DateTime.new(2014, 7, 9, 17, 0, 0), match_type: "Semi Final")
+
+Match.create(play_time: DateTime.new(2014, 7, 12, 17, 0, 0), match_type: "3rd Place")
+Match.create(play_time: DateTime.new(2014, 7, 13, 16, 0, 0), match_type: "Final")

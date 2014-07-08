@@ -19,13 +19,10 @@ class Worldcup.Views.Matches extends Backbone.View
       t.children().children('.match-details').html(v.render().el) 
       @lastItem = id
     else
-      @lastItem = null
-    
-    
+      @lastItem = null    
 
   showTeam: (value) ->
     Backbone.history.navigate("/matches/" + value)
-    
     $("#team-select option[value=\"#{value}\"]").attr("selected", "selected")
     @filteredCollection = @collection.teamMatches(value)    
     @createNewView()
@@ -36,7 +33,6 @@ class Worldcup.Views.Matches extends Backbone.View
     value = @$(e.currentTarget).val()
     @showTeam(value)
 
-
   sortClick: (e) ->
     e.preventDefault()
     t = @$(e.currentTarget).text().toLowerCase().replace(/\s+/g, '-')
@@ -46,19 +42,19 @@ class Worldcup.Views.Matches extends Backbone.View
   sortMatches: (t) ->
     if t is "recent-results"      
       @recentResults()
-
-    if t is "upcoming-matches"
+    else if t is "upcoming-matches"
       @nextMatches()
-
-    if t is "round-of-16"       
-      @roundOf16()
-      
-    if t is "quarter-finals"
+    else if t is "round-of-16"       
+      @roundOf16()      
+    else if t is "quarter-finals"
       @quarterFinals()
-
-    if t is "semi-finals"
+    else if t is "semi-finals"
       @semiFinals()
-      
+    else if t is "finals"
+      @finals()
+    else
+      @showTeam(t)
+    
   roundOf16: ->
     @clickedItem = '.match-nav-item:eq(1)'
     @filteredCollection = @collection.knockoutMatches("Round of 16")
@@ -72,6 +68,13 @@ class Worldcup.Views.Matches extends Backbone.View
   semiFinals: ->
     @clickedItem = '.match-nav-item:eq(3)'
     @filteredCollection = @collection.knockoutMatches("Semi Final")   
+    @render()
+
+  finals: ->
+    @clickedItem = '.match-nav-item:eq(4)'
+    @filteredCollection = @collection.knockoutMatches("Final")  
+    c2 = @collection.knockoutMatches("3rd Place")
+    @filteredCollection.add(c2.models) 
     @render()
 
   recentResults: ->
@@ -96,30 +99,15 @@ class Worldcup.Views.Matches extends Backbone.View
     v = new Worldcup.Views.MatchesViews({collection: @filteredCollection})
     @swapMatchesView(v)
 
-  addListener: (id) ->
-    
-    if id is "recent-results"
-      @listenTo @collection, 'reset', @recentResults
-    else if id is "upcoming-matches"
-      @listenTo @collection, 'reset', @nextMatches
-    else if id is "round-of-16"
-      @listenTo @collection, 'reset', @roundOf16
-    else if id is "quarter-finals"
-      @listenTo @collection, 'reset', @quarterFinals
-    else if id is "semi-finals"
-      @listenTo @collection, 'reset', @semiFinals
-    else
-      @listenTo @collection, 'reset', ->
-        @showTeam(id)
-
-
   initialize: ->
     @lastItem = null
     @listenTo @collection, 'reset', @render
+    #collection needs to be fetched and needs a nav if it is empty
     if @collection.length is 0
       @navView = new Worldcup.Views.MatchesNav(collection: new Worldcup.Collections.Groups())
-      @addListener(@id)
-     
+      
+      @listenTo @collection, 'reset', ->
+        @sortMatches(@id)
       @collection.fetch({reset: true})
     else 
       @filteredCollection = @collection

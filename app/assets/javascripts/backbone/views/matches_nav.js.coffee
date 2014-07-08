@@ -1,6 +1,6 @@
 class Worldcup.Views.MatchesNav extends Backbone.View
 
-  template: HandlebarsTemplates['backbone/templates/matches_nav']
+  template: HandlebarsTemplates['backbone/templates/matches_nav']  
 
   initialize: ->
     @activeTab = null
@@ -19,3 +19,5 @@ class Worldcup.Views.MatchesNav extends Backbone.View
     @$('.match-nav-item').removeClass('active')
     @$(tab).addClass("active")
     @activeTab = tab
+
+  
