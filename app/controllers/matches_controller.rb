@@ -6,7 +6,7 @@ class MatchesController < ApplicationController
   # GET /matches
   # GET /matches.json
   def index
-    @matches = Match.all
+    @matches = Match.includes(:home_team, :away_team, :group)
     respond_to do |format|
       format.html { authenticate_user! }
       format.json {  }

@@ -123,8 +123,6 @@ class Worldcup.Views.Matches extends Backbone.View
       @collection.fetch({reset: true})
     else 
       @filteredCollection = @collection
-    
-
 
   render: ->
     @$el.html(@template())
@@ -134,9 +132,7 @@ class Worldcup.Views.Matches extends Backbone.View
 
   swapMatchesView: (v) ->
     @changeCurrentMatchesView(v)
-    @$('.match-nav-item').removeClass('active')
-
-    @$(@clickedItem).addClass('active') if @clickedItem
+    Worldcup.Vent.trigger "set:matchTab", @clickedItem
     @$('#matches-views').html(@currentMatchesView.render().el)
 
   changeCurrentMatchesView: (v) ->

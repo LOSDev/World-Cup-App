@@ -4,7 +4,7 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.json
   def index
-    @players = Player.all.sort_by! { |player| [-player.goals, -player.assists, player.matches] }
+    @players = Player.includes(:team).sort_by! { |player| [-player.goals, -player.assists, player.matches] }
     respond_to do |format|
       format.html { authenticate_user! }
       format.json {  }
