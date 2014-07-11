@@ -9,7 +9,7 @@ class Worldcup.Routers.MainRouter extends Backbone.Router
     $('#header').html(@appNav.render().el)
 
   routes:
-    "": "groups"
+    "": "matches"
     "groups": "groups"
     "groups/:id": "showGroup"
     "matches": "matches"
