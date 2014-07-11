@@ -37,7 +37,7 @@ body{
 
 .jumbotron {
     
-    background-image: url(../assets/fb.jpg);
+    background-image: asset-data-url("fb.jpg");
     background-position: 25% 25%;
     background-size: cover;
     background-repeat: no-repeat;
