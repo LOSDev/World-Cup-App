@@ -57,6 +57,15 @@ Event.create(event_type: "Goal", match_id: 58, player: "James", away_team: true,
 
 Event.create(event_type: "Goal", match_id: 59, player: "Higuain", home_team: true, minute: "8")
 
+Event.create(event_type: "Goal", match_id: 61, player: "Muller", away_team: true, minute: "11")
+Event.create(event_type: "Goal", match_id: 61, player: "Klose", away_team: true, minute: "23")
+Event.create(event_type: "Goal", match_id: 61, player: "Kroos", away_team: true, minute: "24")
+Event.create(event_type: "Goal", match_id: 61, player: "Kroos", away_team: true, minute: "26")
+Event.create(event_type: "Goal", match_id: 61, player: "Khedira", away_team: true, minute: "29")
+Event.create(event_type: "Goal", match_id: 61, player: "Schurrle", away_team: true, minute: "69")
+Event.create(event_type: "Goal", match_id: 61, player: "Schurrle", away_team: true, minute: "79")
+Event.create(event_type: "Goal", match_id: 61, player: "Oscar", home_team: true, minute: "90")
+
 #Group B
 Event.create(event_type: "Goal", match_id: 3, player: "Alonso", home_team: true, minute: "27")
 Event.create(event_type: "Goal", match_id: 3, player: "Van Persie", away_team: true, minute: "44")
@@ -73,7 +82,7 @@ Event.create(event_type: "Goal", match_id: 4, player: "Bonsejour", home_team: tr
 Event.create(event_type: "Goal", match_id: 18, player: "Robben", away_team: true, minute: "20")
 Event.create(event_type: "Goal", match_id: 18, player: "Cahill", home_team: true, minute: "21")
 Event.create(event_type: "Goal", match_id: 18, player: "Jedinak", home_team: true, minute: "54")
-Event.create(event_type: "Goal", match_id: 18, player: "Van Persie", away_team: true, minute: "58")
+Event.create(event_type: "Goal", match_id: 18, player: "Van Persie", away_team: true, minute: "61")
 Event.create(event_type: "Goal", match_id: 18, player: "Memphis", away_team: true, minute: "68")
 
 Event.create(event_type: "Goal", match_id: 19, player: "Vargas", away_team: true, minute: "20")
@@ -88,7 +97,7 @@ Event.create(event_type: "Goal", match_id: 33, player: "Memphis", home_team: tru
 
 #Group C
 Event.create(event_type: "Goal", match_id: 5, player: "Armero", home_team: true, minute: "5")
-Event.create(event_type: "Goal", match_id: 5, player: "Gutierrez", home_team: true, minute: "58")
+Event.create(event_type: "Goal", match_id: 5, player: "Gutierrez", home_team: true, minute: "61")
 Event.create(event_type: "Goal", match_id: 5, player: "Rodriguez", home_team: true, minute: "90+3")
 
 Event.create(event_type: "Goal", match_id: 8, player: "Honda", away_team: true, minute: "16")

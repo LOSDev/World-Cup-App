@@ -2,6 +2,7 @@ class Worldcup.Views.MatchesNav extends Backbone.View
 
   template: HandlebarsTemplates['backbone/templates/matches_nav']  
 
+  
   initialize: ->
     @activeTab = null
     @listenTo @collection, 'reset', @render
@@ -9,8 +10,7 @@ class Worldcup.Views.MatchesNav extends Backbone.View
       @setMatchTab(tab)
     @collection.fetch({reset: true})
 
-  render: ->
-    
+  render: ->    
     @$el.html(@template(groups: @collection.toJSON()))
     @setMatchTab(@activeTab)
     @

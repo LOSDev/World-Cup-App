@@ -78,8 +78,8 @@ Match.create(home_team_id: Team.find_by_name("Brazil").id, away_team_id: Team.fi
 Match.create(home_team_id: Team.find_by_name("Argentina").id, away_team_id: Team.find_by_name("Belgium").id, play_time: DateTime.new(2014, 7, 5, 13, 0, 0), match_type: "Quarter Final", home_goals: 1, away_goals: 0)
 Match.create(home_team_id: Team.find_by_name("Netherlands").id, away_team_id: Team.find_by_name("Costa Rica").id, play_time: DateTime.new(2014, 7, 5, 17, 0, 0), match_type: "Quarter Final", home_goals: 4, away_goals: 3, extra_time: "after penalties")
 
-Match.create(home_team_id: Team.find_by_name("Brazil").id, away_team_id: Team.find_by_name("Germany").id, play_time: DateTime.new(2014, 7, 8, 17, 0, 0), match_type: "Semi Final")
-Match.create(home_team_id: Team.find_by_name("Netherlands").id, away_team_id: Team.find_by_name("Argentina").id, play_time: DateTime.new(2014, 7, 9, 17, 0, 0), match_type: "Semi Final")
+Match.create(home_team_id: Team.find_by_name("Brazil").id, away_team_id: Team.find_by_name("Germany").id, play_time: DateTime.new(2014, 7, 8, 17, 0, 0), match_type: "Semi Final", home_goals: 1, away_goals: 7)
+Match.create(home_team_id: Team.find_by_name("Netherlands").id, away_team_id: Team.find_by_name("Argentina").id, play_time: DateTime.new(2014, 7, 9, 17, 0, 0), match_type: "Semi Final", home_goals: 2, away_goals: 4, extra_time: "after penalties")
 
-Match.create(play_time: DateTime.new(2014, 7, 12, 17, 0, 0), match_type: "3rd Place")
-Match.create(play_time: DateTime.new(2014, 7, 13, 16, 0, 0), match_type: "Final")
+Match.create(home_team_id: Team.find_by_name("Brazil").id, away_team_id: Team.find_by_name("Netherlands").id, play_time: DateTime.new(2014, 7, 12, 17, 0, 0), match_type: "3rd Place")
+Match.create(home_team_id: Team.find_by_name("Germany").id, away_team_id: Team.find_by_name("Argentina").id, play_time: DateTime.new(2014, 7, 13, 16, 0, 0), match_type: "Final")

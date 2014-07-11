@@ -35,6 +35,7 @@ class Worldcup.Views.Matches extends Backbone.View
 
   sortClick: (e) ->
     e.preventDefault()
+    @lastItem = null 
     t = @$(e.currentTarget).text().toLowerCase().replace(/\s+/g, '-')
     Backbone.history.navigate("/matches/" + t)
     @sortMatches(t)
