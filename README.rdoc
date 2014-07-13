@@ -15,4 +15,4 @@ This App shows some statistics about the World Cup 2014
 
 * Devise
 
-The App lives at http://brazil2014wc.herokuapp.com/#matches/finals
+The App lives at http://brazil2014wc.herokuapp.com/

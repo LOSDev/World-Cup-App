@@ -1,6 +1,6 @@
 Player.create(first_name: "Thomas", last_name: "Muller", goals: 5, assists: 3, matches:6, team_id:Team.find_by_name("Germany").id)
-Player.create(first_name: "Robin", last_name: "van Persie", goals: 3, assists: 0, matches:5, team_id:Team.find_by_name("Netherlands").id)
-Player.create(first_name: "Arjen", last_name: "Robben", goals: 3, assists: 1, matches:6, team_id:Team.find_by_name("Netherlands").id)
+Player.create(first_name: "Robin", last_name: "van Persie", goals: 4, assists: 0, matches:6, team_id:Team.find_by_name("Netherlands").id)
+Player.create(first_name: "Arjen", last_name: "Robben", goals: 3, assists: 1, matches:7, team_id:Team.find_by_name("Netherlands").id)
 Player.create(first_name: "Luis", last_name: "Suarez", goals: 2, assists: 0, matches:2, team_id: Team.find_by_name("Uruguay").id)
 Player.create(first_name: "Karim", last_name: "Benzema", goals: 3, assists: 2, matches:5, team_id: Team.find_by_name("France").id)
 Player.create(first_name: "James", last_name: "Rodriguez", goals: 6, assists: 2, matches:5, team_id: Team.find_by_name("Colombia").id)
@@ -36,3 +36,4 @@ Player.create(first_name: "Klaas Jan", last_name: "Huntelaar", goals: 1, assists
 Player.create(first_name: "Andre", last_name: "Schurrle", goals: 3, assists: 0, matches:5, team_id:Team.find_by_name("Germany").id)
 Player.create(first_name: "Miroslav", last_name: "Klose", goals: 2, assists: 0, matches:4, team_id:Team.find_by_name("Germany").id)
 Player.create(first_name: "Toni", last_name: "Kroos", goals: 2, assists: 4, matches:6, team_id:Team.find_by_name("Germany").id)
+Player.create(first_name: "Daley", last_name: "Blind", goals: 1, assists: 2, matches:7, team_id:Team.find_by_name("Netherlands").id)

@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Worldcup</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -16,24 +16,16 @@
   <div class="jumbotron">
     <h1>Brazil 2014</h1>
   </div>
-  <div id="content">
+  <div id="content" class="container">
     
   </div>
   <div id="sidebar">
     
   </div>
-  <div id="footer">
-    <div class="panel panel-success">
-      <div class="panel-heading"> 
-        <div class="panel-title">
-                 
-                     
-          <h3>
-            <a href="https://github.com/LOSDev?tab=repositories" class="btn btn-block btn-success btn-lg" role="button">My other Projects at GitHub</a>
-          </h3>
-        </div> 
-      </div>      
-    </div>
+  <div id="footer">                    
+    <h3>
+      <a href="https://github.com/LOSDev?tab=repositories" class="btn btn-block btn-default btn-lg" role="button">My other Projects at GitHub</a>
+    </h3>        
   </div>
 
 <%= yield %>
