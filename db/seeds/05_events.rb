@@ -70,6 +70,8 @@ Event.create(event_type: "Goal", match_id: 63, player: "van Persie", away_team: 
 Event.create(event_type: "Goal", match_id: 63, player: "Blind", away_team: true, minute: "17")
 Event.create(event_type: "Goal", match_id: 63, player: "Wijnaldum", away_team: true, minute: "90+1")
 
+Event.create(event_type: "Goal", match_id: 64, player: "Gotze", home_team: true, minute: "113")
+
 #Group B
 Event.create(event_type: "Goal", match_id: 3, player: "Alonso", home_team: true, minute: "27")
 Event.create(event_type: "Goal", match_id: 3, player: "Van Persie", away_team: true, minute: "44")
